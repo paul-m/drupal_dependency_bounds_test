@@ -6,7 +6,12 @@ Drupal Dependency Bounds Test
 
 This test asks the following question:
 
-What happens when we use `composer update --prefer-lowest` on Drupal 8.4.x?
----------------------------------------------------------------------------
+What happens when we don't use Drupal 8.4.x's composer.lock file?
+-----------------------------------------------------------------
 
-TODO: Add a `composer update` step to get the high version test.
+We essentially follow this pattern:
+
+    $ composer update
+    $ ./vendor/bin/phpunit -c core/ --testsuite unit
+
+We do this with both `--prefer-lowest` and without.

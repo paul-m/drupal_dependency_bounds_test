@@ -12,6 +12,13 @@ before_script:
   - composer install --no-progress --prefer-dist
 
 script:
+  - wget https://www.drupal.org/files/issues/composer_json_does_not-2887000-25.patch
+  - git apply composer_json_does_not-2887000-25.patch
+  # Update with --prefer-lowest.
   - composer update --prefer-lowest --no-progress --prefer-dist
   # Run only unit tests because they have no dependencies to set up.
+  - ./vendor/bin/phpunit -c core/ --testsuite unit
+  # Update.
+  - composer update --no-progress --prefer-dist
+  # Re-run the tests.
   - ./vendor/bin/phpunit -c core/ --testsuite unit
