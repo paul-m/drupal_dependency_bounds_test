@@ -6,7 +6,12 @@ php:
 before_script:
   - git clone --branch 8.4.x https://git.drupal.org/project/drupal.git
   - cd drupal
-  - composer update --prefer-lowest --no-progress
+  # Perform a Composer install. Composer update --prefer-lowest doesn't merge
+  # properly with wikimedia/composer-merge-plugin unless there is already a
+  # vendor/.
+  - composer install --no-progress --prefer-dist
 
 script:
+  - composer update --prefer-lowest --no-progress --prefer-dist
+  # Run only unit tests because they have no dependencies to set up.
   - ./vendor/bin/phpunit -c core/ --testsuite unit

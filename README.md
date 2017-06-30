@@ -1,7 +1,9 @@
 Drupal Dependency Bounds Test
 =============================
 
-This Travis-based test tries to run unit tests after using Composer with
-`--prefer-lowest`.
+This test asks the following question:
 
-TODO: Add a `composer update` step.
+What happens when we use `composer update --prefer-lowest` on Drupal 8.4.x?
+---------------------------------------------------------------------------
+
+TODO: Add a `composer update` step to get the high version test.
