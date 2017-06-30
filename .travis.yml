@@ -6,7 +6,7 @@ php:
 before_script:
   - git clone --branch 8.4.x https://git.drupal.org/project/drupal.git
   - cd drupal
-  - composer install --prefer-lowest --no-progress
+  - composer update --prefer-lowest --no-progress
 
 script:
   - ./vendor/bin/phpunit -c core/ --testsuite unit
