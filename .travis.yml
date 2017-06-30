@@ -12,8 +12,8 @@ before_script:
   - composer install --no-progress --prefer-dist
 
 script:
-  - wget https://gist.githubusercontent.com/paul-m/d9c79d03f5562a20367de4c2293760bc/raw/f6ba0a2892d1a19dd7e4a1fe1e468e8cb676890c/composer_updates.patch
-  - git apply composer_updates.patch
+  - wget https://www.drupal.org/files/issues/2887000_57.patch
+  - git apply 2887000_57.patch
   # Update with --prefer-lowest.
   - composer update --prefer-lowest --no-progress --prefer-dist
   # Run only unit tests because they have no dependencies to set up.
