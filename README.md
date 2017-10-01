@@ -15,3 +15,4 @@ We essentially follow this pattern:
     $ ./vendor/bin/phpunit -c core/ --testsuite unit
 
 We do this with both `--prefer-lowest` and without.
+ 
