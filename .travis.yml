@@ -10,6 +10,8 @@ php:
 before_script:
   - git clone --branch 8.4.x https://git.drupal.org/project/drupal.git
   - cd drupal
+  - wget https://www.drupal.org/files/issues/2867960-93.patch
+  - git apply 2867960-93.patch
   # Perform a Composer install. Composer update --prefer-lowest doesn't merge
   # properly with wikimedia/composer-merge-plugin unless there is already a
   # vendor/.
