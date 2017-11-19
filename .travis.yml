@@ -1,7 +1,7 @@
 sudo: false
 language: php
 php:
-  #- '5.5.9'
+  - '5.5.9'
   - '5.5'
   - '5.6'
   - '7.0'
@@ -10,8 +10,8 @@ php:
 before_script:
   - git clone --branch 8.4.x https://git.drupal.org/project/drupal.git
   - cd drupal
-  - wget https://www.drupal.org/files/issues/2867960-93.patch
-  - git apply -v 2867960-93.patch
+  - wget https://www.drupal.org/files/issues/2919410-07.patch
+  - git apply -v 2919410-07.patch
   # Perform a Composer install. Composer update --prefer-lowest doesn't merge
   # properly with wikimedia/composer-merge-plugin unless there is already a
   # vendor/.
