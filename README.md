@@ -6,7 +6,7 @@ Drupal Dependency Bounds Test
 
 This test asks the following question:
 
-What happens when we don't use Drupal 8.4.x's composer.lock file?
+What happens when we don't use Drupal 8.6.x's composer.lock file?
 -----------------------------------------------------------------
 
 We essentially follow this pattern:
@@ -15,4 +15,3 @@ We essentially follow this pattern:
     $ ./vendor/bin/phpunit -c core/ --testsuite unit
 
 We do this with both `--prefer-lowest` and without.
- 
