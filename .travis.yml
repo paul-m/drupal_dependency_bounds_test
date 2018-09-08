@@ -19,9 +19,11 @@ before_script:
 script:
   # Update with --prefer-lowest.
   - composer update --prefer-lowest --no-progress --prefer-dist
+  - composer run-script drupal-phpunit-upgrade
   # Run only unit tests because they have no dependencies to set up.
   - ./vendor/bin/phpunit -c core/ --testsuite unit
   # Update.
   - composer update --no-progress --prefer-dist
+  - composer run-script drupal-phpunit-upgrade
   # Re-run the tests.
   - ./vendor/bin/phpunit -c core/ --testsuite unit
