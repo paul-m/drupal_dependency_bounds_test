@@ -9,7 +9,7 @@ php:
   - '7.2'
 
 before_script:
-  - git clone --branch 8.6.x https://git.drupal.org/project/drupal.git
+  - git clone --branch 8.7.x https://git.drupal.org/project/drupal.git
   - cd drupal
   # Perform a Composer install. Composer update --prefer-lowest doesn't merge
   # properly with wikimedia/composer-merge-plugin unless there is already a
