@@ -18,12 +18,12 @@ before_script:
 
 script:
   # Update with --prefer-lowest.
-  - composer update --prefer-lowest --no-progress --prefer-dist
+  - composer update --prefer-lowest --no-progress --prefer-dist --no-interaction
   - composer run-script drupal-phpunit-upgrade
   # Run only unit tests because they have no dependencies to set up.
-  - ./vendor/bin/phpunit -c core/ --testsuite unit
+  - SYMFONY_DEPRECATIONS_HELPER=weak-vendor ./vendor/bin/phpunit -c core/ --testsuite unit
   # Update.
-  - composer update --no-progress --prefer-dist
+  - composer update --no-progress --prefer-dist --no-interaction
   - composer run-script drupal-phpunit-upgrade
   # Re-run the tests.
-  - ./vendor/bin/phpunit -c core/ --testsuite unit
+  - SYMFONY_DEPRECATIONS_HELPER=weak-vendor ./vendor/bin/phpunit -c core/ --testsuite unit
