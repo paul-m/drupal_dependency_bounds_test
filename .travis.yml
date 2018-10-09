@@ -11,10 +11,13 @@ php:
 before_script:
   - git clone --branch 8.7.x https://git.drupal.org/project/drupal.git
   - cd drupal
+  # Tell composer to always discard changes. This is a workaround for the fact
+  # that we modify drupal/coder.
+  - composer config discard-changes true
   # Perform a Composer install. Composer update --prefer-lowest doesn't merge
   # properly with wikimedia/composer-merge-plugin unless there is already a
   # vendor/.
-  - composer install --no-progress --prefer-dist
+  - composer install --no-progress --prefer-dist --no-interaction
 
 script:
   # Update with --prefer-lowest.
