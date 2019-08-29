@@ -1,12 +1,12 @@
 sudo: false
 language: php
 php:
-  - '7.0'
+  - '7.0.8'
   - '7.1'
   - '7.2'
 
 before_script:
-  - git clone --branch 8.8.x https://git.drupal.org/project/drupal.git
+  - git clone --depth 1 --branch 8.8.x https://git.drupalcode.org/project/drupal.git
   - cd drupal
   # Tell composer to always discard changes. This is a workaround for the fact
   # that we modify drupal/coder.
