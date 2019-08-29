@@ -6,7 +6,7 @@ Drupal Dependency Bounds Test
 
 This test asks the following question:
 
-What happens when we don't use Drupal 8.7.x's composer.lock file?
+What happens when we don't use Drupal 8.8.x's composer.lock file?
 -----------------------------------------------------------------
 
 We essentially follow this pattern:
